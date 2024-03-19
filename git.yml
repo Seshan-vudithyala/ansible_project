@@ -1,0 +1,21 @@
+- name: Download repo from GitHub and upload files to var/www/html
+  hosts: your_target_host
+  gather_facts: false
+
+  vars:
+    github_repo_url: "https://github.com/your_username/your_repo.git"
+    local_temp_dir: "/tmp/your_repo"
+    destination_dir: "/var/www/html"
+
+  tasks:
+    - name: Clone GitHub repository
+      git:
+        repo: "{{ github_repo_url }}"
+        dest: "{{ local_temp_dir }}"
+        version: main
+
+    - name: Copy files to destination directory
+      synchronize:
+        src: "{{ local_temp_dir }}"
+        dest: "{{ destination_dir }}"
+      delegate_to: localhost

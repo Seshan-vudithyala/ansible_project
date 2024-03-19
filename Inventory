@@ -1,0 +1,8 @@
+[system1]
+3.84.225.175 ansible_user=ec2-user 
+[system2]
+18.208.160.25 ansible_user=ec2-user 
+[system3]
+54.210.75.170 ansible_user=ec2-user 
+[system4]
+54.221.129.59  ansible_user=ec2-user 
