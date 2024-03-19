@@ -1,5 +1,5 @@
 - name: Download repo from GitHub and upload files to var/www/html
-  hosts: your_target_host
+  hosts: all
   gather_facts: false
 
   vars:
